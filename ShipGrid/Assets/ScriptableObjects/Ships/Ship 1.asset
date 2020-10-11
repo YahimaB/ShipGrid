@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8107fa70378e4380a6e9f53baaff3dc, type: 3}
+  m_Name: Ship 1
+  m_EditorClassIdentifier: 
+  Name: "\u041A\u043E\u0440\u0430\u0431\u043B\u044C \u0410\u043B\u044C\u0444\u0430"
+  Icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  gridSize:
+    x: 7
+    y: 5
+  grid:
+    x: 7
+    y: 5
+    rows:
+    - row: 00010101010100
+    - row: 00010101010100
+    - row: 00010100010100
+    - row: 00010101010100
+    - row: 00010001000100
