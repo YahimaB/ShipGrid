@@ -12,7 +12,7 @@ public class ShipScriptableObject : ScriptableObject
     public bool this[int i, int j] => grid[i, j];
 
     [SerializeField]
-    private int2 gridSize;
+    private int2 gridSize = new int2(1,1);
     [SerializeField]
     private BoolGrid grid;
 

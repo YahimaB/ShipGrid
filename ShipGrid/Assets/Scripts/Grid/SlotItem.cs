@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class SlotItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    private Text text;
+    private Text text = default;
 
     [SerializeField]
     private SlotSector[] slotSectors = new SlotSector[4];

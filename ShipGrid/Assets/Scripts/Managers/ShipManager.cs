@@ -7,13 +7,13 @@ using Unity.Mathematics;
 public class ShipManager : MonoBehaviour
 {
     [SerializeField]
-    private ShipBuilder shipBuilder;
+    private ShipBuilder shipBuilder = default;
 
     [SerializeField]
-    private Transform modulesHolder;
+    private Transform modulesHolder = default;
 
     [SerializeField]
-    private GameObject modulePrefab;
+    private GameObject modulePrefab = default;
 
     private int2 gridSize;
     private SlotItem[,] slotGrid;
@@ -168,7 +168,6 @@ public class ShipManager : MonoBehaviour
         {
             for (int x = ActiveModulePos.x; x < ActiveModulePos.x + size.x; x++)
             {
-                //set each slot parameters
                 slot = slotGrid[y, x];
 
                 if (slot.Module != null)

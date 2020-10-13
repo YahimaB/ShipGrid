@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class NoDragScrollRect : MonoBehaviour, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField]
-    private ScrollRect scrollRect;
+    private ScrollRect scrollRect = default;
 
     public void OnBeginDrag(PointerEventData data)
     {

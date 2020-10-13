@@ -7,11 +7,11 @@ using System;
 public class ShipButton : MonoBehaviour
 {
     [SerializeField]
-    private Image icon;
+    private Image icon = default;
     [SerializeField]
-    private Text nameText;
+    private Text nameText = default;
     [SerializeField]
-    private Button button;
+    private Button button = default;
 
     public ShipScriptableObject Ship { get; private set; }
     public CompressedSlot[,] CompressedGrid { get; set; }

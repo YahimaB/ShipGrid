@@ -7,9 +7,9 @@ using UnityEngine.Events;
 public class CategoryButton : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField]
-    private Image icon;
+    private Image icon = default;
     [SerializeField]
-    private Text nameText;
+    private Text nameText = default;
     private UnityAction OnButtonClicked;
 
     public void SetUpButton(ModuleScriptableObject item, Action<ModuleScriptableObject> onButtonClicked)

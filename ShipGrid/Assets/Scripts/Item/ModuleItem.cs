@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ModuleItem : MonoBehaviour
 {
     [SerializeField]
-    private Image icon;
+    private Image icon = default;
 
     public static ModuleItem ActiveModule;
     private static bool isDragging = false;

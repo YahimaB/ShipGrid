@@ -6,26 +6,25 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject shipButtonPrefab;
+    private GameObject shipButtonPrefab = default;
 
     [SerializeField]
     private List<ShipScriptableObject> ships = new List<ShipScriptableObject>();
 
     [SerializeField]
-    private ShipManager shipManager;
+    private ShipManager shipManager = default;
 
     [SerializeField]
-    private CategoriesManager categoriesManager;
+    private CategoriesManager categoriesManager = default;
 
     [SerializeField]
-    private Button backButton;
+    private Button backButton = default;
 
     [SerializeField]
-    private GameObject messageWindow;
+    private GameObject messageWindow = default;
 
     ShipButton currentShip = null;
 
-    // Start is called before the first frame update
     void Start()
     {
         foreach (var ship in ships)

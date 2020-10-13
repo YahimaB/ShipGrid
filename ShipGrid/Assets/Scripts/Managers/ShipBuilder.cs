@@ -6,7 +6,7 @@ using Unity.Mathematics;
 public class ShipBuilder : MonoBehaviour
 {
     [SerializeField]
-    private GameObject slotPrefab;
+    private GameObject slotPrefab = default;
 
     public static float SlotSize { get; private set; }
 

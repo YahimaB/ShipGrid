@@ -9,7 +9,7 @@ using UnityEngine.Events;
 public class SlotSector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    private int QuadNum;
+    private int QuadNum = 0;
 
     public UnityAction<bool, int> OnStateChange;
 

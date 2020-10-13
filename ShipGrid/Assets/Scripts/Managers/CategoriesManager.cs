@@ -4,23 +4,24 @@ using System;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CategoriesManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject menuButtonPrefab;
+    private GameObject menuButtonPrefab = default;
 
     [SerializeField]
-    private GameObject modulePrefab;
+    private GameObject modulePrefab = default;
 
     [SerializeField]
-    private Transform contentPanel;
+    private Transform contentPanel = default;
 
     [SerializeField]
-    private Button backButton;
+    private Button backButton = default;
 
     [SerializeField]
-    private List<ModuleCategory> baseModuleTypes = new List<ModuleCategory>();
+    private List<MainCategory> mainCategories = new List<MainCategory>();
 
     [SerializeField]
     private Stack<ModuleCategory> order = new Stack<ModuleCategory>();
@@ -48,33 +49,33 @@ public class CategoriesManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        if (newCategory == null)
+        switch (newCategory)
         {
-            foreach (var category in baseModuleTypes)
-                AddButton(category);
-        }
-        else if (newCategory.HoldsModules)
-        {
-            foreach (var module in newCategory.Modules)
-                AddButton(module);
-        }
-        else
-        {
-            foreach (var category in newCategory.Categories)
-                AddButton(category);
+            case null:
+                foreach (var category in mainCategories)
+                    AddButton(category);
+                break;
+            case MainCategory mainCategory:
+                foreach (var subCategory in mainCategory.SubCategories)
+                    AddButton(subCategory);
+                break;
+            case SubCategory subCategory:
+                foreach (var module in subCategory.Modules)
+                    AddButton(module);
+                break;
         }
 
         currentCategory = newCategory;
     }
 
-    private void AddButton(ModuleScriptableObject module)//may add a list variable when sort list is added later
+    private void AddButton(ModuleScriptableObject module)
     {
         CategoryButton button = Instantiate(menuButtonPrefab, contentPanel).GetComponent<CategoryButton>();
         button.GetComponent<RectTransform>().localScale = Vector3.one;
         button.SetUpButton(module, OnModuleButton);
     }
 
-    private void AddButton(ModuleCategory category)//may add a list variable when sort list is added later
+    private void AddButton(ModuleCategory category)
     {
         CategoryButton button = Instantiate(menuButtonPrefab, contentPanel).GetComponent<CategoryButton>();
         button.GetComponent<RectTransform>().localScale = Vector3.one;
@@ -100,16 +101,25 @@ public class CategoriesManager : MonoBehaviour
         ModuleCategory category = order.Pop();
         RefreshList(category, true);
     }
-}
 
+    [Serializable]
+    private class MainCategory : ModuleCategory
+    {
+        public List<SubCategory> SubCategories = new List<SubCategory>();
+    }
+
+    [Serializable]
+    private class SubCategory : ModuleCategory
+    {
+        public List<ModuleScriptableObject> Modules = new List<ModuleScriptableObject>();
+    }
+}
 
 [Serializable]
 public class ModuleCategory
 {
     public string Name;
     public Sprite Icon;
-    public bool HoldsModules;
-
-    public List<ModuleCategory> Categories = new List<ModuleCategory>();
-    public List<ModuleScriptableObject> Modules = new List<ModuleScriptableObject>();
 }
+
+

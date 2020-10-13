@@ -465,15 +465,12 @@ MonoBehaviour:
   modulePrefab: {fileID: 7468927323581138951, guid: 5ac74ee703e0e40ca90c9d6f968404e4, type: 3}
   contentPanel: {fileID: 104340550}
   backButton: {fileID: 1941391722}
-  baseModuleTypes:
+  mainCategories:
   - Name: "\u041E\u0440\u0443\u0436\u0438\u0435"
     Icon: {fileID: 21300000, guid: 9b7288acccdf34d19813f69adc31ce10, type: 3}
-    HoldsModules: 0
-    Categories:
+    SubCategories:
     - Name: "\u0411\u0430\u043B\u043B\u0438\u0441\u0442\u0438\u043A\u0430"
       Icon: {fileID: 21300000, guid: 9b61cf0f64a8a45c7b8546fcc5ee078a, type: 3}
-      HoldsModules: 1
-      Categories: []
       Modules:
       - {fileID: 11400000, guid: 33104680bc4a8422cbdfc3709a346b0b, type: 2}
       - {fileID: 11400000, guid: 698c1d8a009a44329895eb5bd1b781e4, type: 2}
@@ -481,21 +478,14 @@ MonoBehaviour:
       - {fileID: 11400000, guid: e71a069514ced4320b8569a4fde84d4a, type: 2}
       - {fileID: 11400000, guid: 072612b06ad674dd3a66aa90938f9272, type: 2}
     - Name: "\u041B\u0430\u0437\u0435\u0440\u044B"
-      Icon: {fileID: 21300000, guid: a8a6816b663a04e15a257dd9a6623063, type: 3}
-      HoldsModules: 0
-      Categories: []
-      Modules: []
-    - Name: "\u0420\u0430\u043A\u0435\u0442\u043D\u0438\u0446\u044B"
       Icon: {fileID: 21300000, guid: bd331c8fe20fb4fe7ab29be50d750570, type: 3}
-      HoldsModules: 0
-      Categories: []
       Modules: []
-    Modules: []
+    - Name: "\u0420\u0430\u043A\u0435\u0442\u044B"
+      Icon: {fileID: 21300000, guid: a8a6816b663a04e15a257dd9a6623063, type: 3}
+      Modules: []
   - Name: "\u0417\u0430\u0449\u0438\u0442\u0430"
     Icon: {fileID: 21300000, guid: a5551b78aba4c42629daa2994eb6b035, type: 3}
-    HoldsModules: 0
-    Categories: []
-    Modules: []
+    SubCategories: []
 --- !u!114 &228453048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +505,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 186051222}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
